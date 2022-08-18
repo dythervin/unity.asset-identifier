@@ -1,0 +1,18 @@
+{
+    "name": "Dythervin.AssetIdentifier",
+    "rootNamespace": "Dythervin.AssetIdentifier",
+    "references": [
+        "GUID:b966010acae04071ad47aedc02c40c1b",
+        "GUID:0d2722be3221441990b3d439a49d3d00",
+        "GUID:0031e864adfd431f8c8176db3609a3cb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
