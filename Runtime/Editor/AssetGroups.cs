@@ -43,8 +43,7 @@ namespace Dythervin.AssetIdentifier.Editor
             if (SData.identifiers.TryGetValue(name, out ObjData value))
                 return value;
 
-            SData.identifiers[name] = value = new ObjData();
-            return value;
+            return SData.identifiers[name] = new ObjData();
         }
 
         private static void AssetsOnOnBeforeSave()

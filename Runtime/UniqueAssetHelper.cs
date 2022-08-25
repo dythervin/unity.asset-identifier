@@ -42,7 +42,7 @@ namespace Dythervin.AssetIdentifier
                 return;
             }
 
-            uint newId = Dythervin.AssetIdentifier.Editor.AssetGroups.GetData(attribute.name).GetId(asset);
+            uint newId = Editor.AssetGroups.GetData(attribute.name).GetId(asset);
             if (newId == asset.Id)
                 return;
 

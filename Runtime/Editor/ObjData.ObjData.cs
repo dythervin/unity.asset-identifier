@@ -27,30 +27,29 @@ namespace Dythervin.AssetIdentifier.Editor
         [SuppressMessage("ReSharper", "SuspiciousTypeConversion.Global")]
         public uint GetId(IUnique obj)
         {
-            if (_objId.TryGetValue(obj, out uint value))
-                return value;
-
             uint current = obj.Id;
 
-            if (_objId.TryGetValue(current, out IUnique savedObj) && savedObj != null && savedObj != obj)
+            if (!_objId.TryGetValue(current, out IUnique savedObj) || savedObj == null)
             {
-                DateTime savedObjDate = GetCreationTimeSafe(savedObj);
-                DateTime currentObj = GetCreationTimeSafe(obj);
-
-                if (savedObjDate > currentObj)
-                {
-                    _objId.Remove(savedObj);
-                    _objId[obj] = current;
-                    savedObj.RequestID();
-                    return current;
-                }
-
-                _objId[obj] = GetNew();
-                return id;
+                _objId[obj] = current;
+                return current;
             }
 
-            _objId[obj] = current;
-            return current;
+            if (savedObj == obj)
+                return current;
+
+            DateTime savedObjDate = GetCreationTimeSafe(savedObj);
+            DateTime currentObj = GetCreationTimeSafe(obj);
+
+            if (savedObjDate > currentObj)
+            {
+                _objId[obj] = current;
+                savedObj.RequestID();
+                return current;
+            }
+
+            _objId[obj] = GetNew();
+            return id;
         }
 #endif
 

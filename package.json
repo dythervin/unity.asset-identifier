@@ -1,6 +1,6 @@
 {
   "name": "com.dythervin.unity.asset-identifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2020.3",
   "unityRelease": "0f1",
   "keywords": [],
@@ -10,9 +10,9 @@
     "url": "https://github.com/dythervin"
   },
   "dependencies": {
-    "com.dythervin.unity.assets": "1.0.0",
-    "com.dythervin.unity.core": "1.0.0",
-    "com.dythervin.unity.collections": "1.0.0"
+    "com.dythervin.unity.assets": "1.0.1",
+    "com.dythervin.unity.core": "1.0.1",
+    "com.dythervin.unity.collections": "1.0.1"
   },
   "displayName": "asset-identifier"
 }
